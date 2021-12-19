@@ -11,6 +11,18 @@ class User < ApplicationRecord
   has_many :retweets
   has_many :reposts, through: :retweets, source: :post
 
+  def following?(other_user)
+    relationships.find_by(followed_id: other_user.id)
+  end
+
+  def follow!(other_user)
+    relationships.create!(followed_id: other_user.id)
+  end
+
+  def unfollow!(other_user)
+    relationships.find_by(followed_id: other_user.id).destroy
+  end
+
   def replies
     self.posts.select{|post| post.in_reply_to_post_id != nil}
   end
