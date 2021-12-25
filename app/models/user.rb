@@ -23,6 +23,16 @@ class User < ApplicationRecord
     relationships.find_by(followed_id: other_user.id).destroy
   end
 
+  def followed_users_posts
+    posts = []
+    followed_users.each do |u| 
+      u.posts.each do |post| 
+        posts << post
+      end
+    end
+    posts
+  end
+
   def replies
     self.posts.select{|post| post.in_reply_to_post_id != nil}
   end
