@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :posts
-  resources :users
+  resources :users, only: [:index, :show] do
+    resources :posts, only: [:index, :show, :create]
+    resources :likes, only: [:index]
+  end
 end
