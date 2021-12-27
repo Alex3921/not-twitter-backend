@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :users, only: [:index, :show] do
+  resources :users, only: [:show] do
     resources :posts, only: [:index, :show, :create]
     resources :likes, only: [:index]
   end
+
+  # get     'signup',       to: 'users#new'
+  post    'signup',       to: 'users#create'
+  # get     'login',        to: 'auth#new'
+  post    'login',        to: 'auth#create'
+  # delete  'logout',       to: 'sessions#destroy'
 end
