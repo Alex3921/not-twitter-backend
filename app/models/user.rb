@@ -13,7 +13,10 @@ class User < ApplicationRecord
   has_many :liked_posts, through: :likes, source: :post
   
   has_many :retweets
-  has_many :reposts, through: :retweets, source: :post
+  has_many :retweeted_posts, through: :retweets, source: :post
+
+  has_many :bookmarks
+  has_many :bookmarked_posts, through: :bookmarks, source: :post
 
   def following?(other_user)
     relationships.find_by(followed_id: other_user.id)
