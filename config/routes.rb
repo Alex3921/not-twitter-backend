@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :users,     only: [:show]
   resources :posts,     only: [:show, :create]
-  resources :likes,     only: [:index]
+  resources :likes,     only: [:index, :create]
   resources :bookmarks, only: [:index, :create]
   resources :retweets,  only: [:create]
   
