@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :likes,     only: [:index, :create]
   resources :bookmarks, only: [:index, :create]
   resources :retweets,  only: [:create]
+  resources :relationships, only: [:index]
   
   get       '/profile', to: 'posts#profile'
   get       '/home',    to: 'posts#home'
