@@ -28,13 +28,8 @@ gem 'dotenv-rails', '~> 2.7', '>= 2.7.6'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
-# Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
-
-# Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
-
-# Faker gem allows us to have real-looking test data.
 gem 'faker', '~> 2.18.0'
 
 group :development, :test do
