@@ -18,16 +18,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 # ActiveModel::Serializers allows you to generate your JSON in an object-oriented and convention-driven manner
 gem 'active_model_serializers', '~> 0.10.2'
-
-# Autoload dotenv in Rails.
 gem 'dotenv-rails', '~> 2.7', '>= 2.7.6'
-
-# Makes http fun! Also, makes consuming restful web services dead easy.
-# gem 'httparty', '~> 0.20.0'
-
-# Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
-
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'rack-cors'
 gem 'faker', '~> 2.18.0'
