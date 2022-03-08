@@ -5,7 +5,7 @@ ruby '2.6.1'
 
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 gem 'pg', '~> 1.2', '>= 1.2.3'
-gem 'puma', '~> 5.0'
+gem 'puma', '~> 5.6'
 gem 'bcrypt', '~> 3.1.7'
 gem 'active_model_serializers', '~> 0.10.2'
 gem 'dotenv-rails', '~> 2.7', '>= 2.7.6'
