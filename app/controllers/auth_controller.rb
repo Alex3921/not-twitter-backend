@@ -15,6 +15,7 @@ class AuthController < ApplicationController
 
   private
   def user_signin_params
+    byebug
     params.require(:auth).permit(:username, :password)
   end
 end
