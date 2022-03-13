@@ -2,6 +2,7 @@ class AuthController < ApplicationController
   skip_before_action :authorized?, only: [:create]
 
   def create
+    byebug
     @user = User.find_by(username: user_signin_params[:username])
 
     if @user && @user.authenticate(user_signin_params[:password])
