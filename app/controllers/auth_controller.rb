@@ -6,6 +6,7 @@ class AuthController < ApplicationController
     @user = User.find_by(username: user_signin_params[:username])
 
     if @user && @user.authenticate(user_signin_params[:password])
+      byebug
       token = encode_token({ user_id: @user.id})
       render json: {user: UserSerializer.new(@user), jwt: token }, status: :accepted
     else
