@@ -1,11 +1,12 @@
 10.times {
-  user = User.create(
+  user = User.create!(
     username: Faker::Internet.unique.username,
     email: Faker::Internet.unique.email,
     bio: Faker::Quote.famous_last_words,
     birthdate: Faker::Date.between(from: '1985-01-01', to: '2000-12-12'),
     location: Faker::Address.state,
-    name: Faker::FunnyName.name
+    name: Faker::FunnyName.name,
+    password: "asd123"
   )
 
   user_posts = rand(5..10)
