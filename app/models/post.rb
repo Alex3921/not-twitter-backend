@@ -9,4 +9,9 @@ class Post < ApplicationRecord
     bookmarked_post = current_user.bookmarks.build(bookmark_params)
     bookmarked_post.save
   end
+
+  def remove_bookmark(user_id)
+    bookmark = Bookmark.select{|b| b.post_id == self.id && b.user_id == user_id}
+    Bookmark.delete(bookmark)
+  end
 end
