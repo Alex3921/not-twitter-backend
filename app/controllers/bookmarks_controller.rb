@@ -5,9 +5,14 @@ class BookmarksController < ApplicationController
   end
 
   def create
-    bookmarked_post = current_user.bookmarks.build(bookmark_params)
-    bookmarked_post.save
-    render json: { message: "Post added successfully!" }, status: :created
+    post = Post.find(bookmark_params[:post_id])
+    if current_user.bookmarks.exists?(post_id: bookmark_params[:post_id])
+      post.remove_bookmark(current_user.id)
+      render json: { message: "Post removed from Bookmarks!" }, status: :accepted
+    else
+      post.add_bookmark(current_user, bookmark_params)
+      render json: { message: "Post added to your Bookmarks!" }, status: :created
+    end
   end
 
   private
