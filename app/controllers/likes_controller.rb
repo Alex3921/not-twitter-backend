@@ -6,7 +6,7 @@ class LikesController < ApplicationController
   end
 
   def create
-    liked_post = current_user.liked.build(like_params)
+    liked_post = current_user.likes.build(like_params)
     liked_post.save
     render json: { message: "Post was added to favorites!" }, status: :created
   end
