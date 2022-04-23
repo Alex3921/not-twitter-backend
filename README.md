@@ -1,6 +1,6 @@
 # Not Twitter App
 
-  This is an attempt to a twitter clone using Ruby on Rails API backend and a React-Redux frontend.
+  Built this twitter clone using Ruby on Rails API backend and a React-Redux frontend.
   
 ## Overview
 
